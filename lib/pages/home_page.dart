@@ -27,6 +27,7 @@ class _HomePageState extends State<HomePage> {
       body: Stack(
         children: <Widget>[
           _featuredGamesWidget(),
+          _grandientBoxWidget(),
         ],
       ),
     );
@@ -50,6 +51,27 @@ class _HomePageState extends State<HomePage> {
             );
           },
         ).toList(),
+      ),
+    );
+  }
+
+  Widget _grandientBoxWidget() {
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: Container(
+        height: _deviceHeight! * 0.80,
+        width: _deviceWidth!,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color.fromRGBO(35, 45, 59, 1.0),
+              Colors.transparent,
+            ],
+            stops: [0.65, 1.0],
+            begin: Alignment.bottomCenter,
+            end: Alignment.topCenter,
+          ),
+        ),
       ),
     );
   }
