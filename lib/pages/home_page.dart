@@ -24,10 +24,13 @@ class _HomePageState extends State<HomePage> {
     _deviceHeight = MediaQuery.of(context).size.height;
     _deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
+      extendBodyBehindAppBar: true,
       body: Stack(
-        children: <Widget>[
+        children: [
           _featuredGamesWidget(),
           _grandientBoxWidget(),
+          _topLayerWidget(),
         ],
       ),
     );
@@ -72,6 +75,56 @@ class _HomePageState extends State<HomePage> {
             end: Alignment.topCenter,
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _topLayerWidget() {
+    return Padding(
+      padding: EdgeInsets.symmetric(
+          horizontal: _deviceWidth! * 0.05, vertical: _deviceHeight! * 0.005),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          _topBarWidget(),
+        ],
+      ),
+    );
+  }
+
+  Widget _topBarWidget() {
+    return SizedBox(
+      height: _deviceHeight! * 0.13,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const Icon(
+            Icons.menu,
+            color: Colors.white,
+            size: 30,
+          ),
+          Row(
+            children: [
+              const Icon(
+                Icons.search,
+                color: Colors.white,
+                size: 30,
+              ),
+              SizedBox(
+                width: _deviceWidth! * 0.03,
+              ),
+              const Icon(
+                Icons.notifications_none,
+                color: Colors.white,
+                size: 30,
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
