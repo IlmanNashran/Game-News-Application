@@ -14,9 +14,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   double? _deviceHeight, _deviceWidth;
 
+  var _selectedGame;
+
   @override
   void initState() {
     super.initState();
+    _selectedGame = 0;
   }
 
   @override
@@ -36,11 +39,18 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+//picture cursol slider
   Widget _featuredGamesWidget() {
     return SizedBox(
       height: _deviceHeight! * 0.50,
       width: _deviceWidth,
       child: PageView(
+        //change slide based on info
+        onPageChanged: (_index) {
+          setState(() {
+            _selectedGame = _index;
+          });
+        },
         scrollDirection: Axis.horizontal,
         children: featuredGames.map(
           (_game) {
@@ -89,6 +99,7 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           _topBarWidget(),
+          _featuredGamesInfoWidget(),
         ],
       ),
     );
@@ -123,6 +134,44 @@ class _HomePageState extends State<HomePage> {
                 size: 30,
               ),
             ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _featuredGamesInfoWidget() {
+    return SizedBox(
+      height: _deviceHeight! * 0.12,
+      width: _deviceWidth!,
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            featuredGames[_selectedGame].title,
+            maxLines: 2,
+            style: TextStyle(
+              fontSize: _deviceHeight! * 0.040,
+              fontWeight: FontWeight.w600,
+              color: Colors.white,
+            ),
+          ),
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: featuredGames.map((_game) {
+              double _circleRadius = _deviceHeight! * 0.004;
+              return Container(
+                height: _circleRadius * 2,
+                width: _circleRadius * 2,
+                decoration: BoxDecoration(
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.circular(100)),
+              );
+            }).toList(),
           ),
         ],
       ),
