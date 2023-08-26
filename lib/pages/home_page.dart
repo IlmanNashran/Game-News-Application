@@ -68,6 +68,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+//background color
   Widget _grandientBoxWidget() {
     return Align(
       alignment: Alignment.bottomCenter,
@@ -89,6 +90,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+//each layer by column
   Widget _topLayerWidget() {
     return Padding(
       padding: EdgeInsets.symmetric(
@@ -99,12 +101,16 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           _topBarWidget(),
+          SizedBox(
+            height: _deviceHeight! * 0.13,
+          ), //sizebox for spacing
           _featuredGamesInfoWidget(),
         ],
       ),
     );
   }
 
+//top bar column
   Widget _topBarWidget() {
     return SizedBox(
       height: _deviceHeight! * 0.13,
@@ -140,6 +146,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  //column for text and row for cicler
   Widget _featuredGamesInfoWidget() {
     return SizedBox(
       height: _deviceHeight! * 0.12,
@@ -158,17 +165,23 @@ class _HomePageState extends State<HomePage> {
               color: Colors.white,
             ),
           ),
+          SizedBox(
+            height: _deviceHeight! * 0.01,
+          ), //sizebox for spacing
           Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: featuredGames.map((_game) {
+              bool _isActive =
+                  _game.title == featuredGames[_selectedGame].title;
               double _circleRadius = _deviceHeight! * 0.004;
               return Container(
+                margin: EdgeInsets.only(right: _deviceWidth! * 0.015),
                 height: _circleRadius * 2,
                 width: _circleRadius * 2,
                 decoration: BoxDecoration(
-                    color: Colors.grey,
+                    color: _isActive ? Colors.green : Colors.grey,
                     borderRadius: BorderRadius.circular(100)),
               );
             }).toList(),
