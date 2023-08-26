@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../data.dart';
 
+import '../widgets/scrollable_games_widget.dart';
+
 class HomePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -105,6 +107,11 @@ class _HomePageState extends State<HomePage> {
             height: _deviceHeight! * 0.13,
           ), //sizebox for spacing
           _featuredGamesInfoWidget(),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: _deviceHeight! * 0.01),
+            child: ScrollableGamesWidget(
+                _deviceHeight! * 0.24, _deviceWidth, games, true),
+          ),
         ],
       ),
     );

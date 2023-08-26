@@ -12,7 +12,7 @@ class Game {
   String description;
   String studio;
 
-  Game( this.title, this.coverImage, this.description, this.studio);
+  Game(this.title, this.coverImage, this.description, this.studio);
 }
 
 List<Game> games = [
@@ -27,7 +27,7 @@ List<Game> games = [
   Game(
     "Metro Exodus",
     GameImage(
-        "https://assets1.ignimgs.com/2018/12/14/metro-exodus---button-1544750418985.jpg",
+        "https://cdn.cloudflare.steamstatic.com/steam/apps/412020/header.jpg?t=1669390585",
         ""),
     "",
     "4A Games",
@@ -101,12 +101,12 @@ List<Game> featuredGames = [
     "Infinity Ward",
   ),
   Game(
-    "Dragon Ball Z: Kakarot",
+    "Left For Dead",
     GameImage(
-        "https://cdn3.dualshockers.com/wp-content/uploads/2020/01/dbx-kakarot.png",
+        "https://www.dexerto.com/cdn-cgi/image/width=828,quality=75,format=auto/https://editors.dexerto.com/wp-content/uploads/2020/09/left-4-dead-2-the-last-stand-release-date-mutations-achievements.jpg",
         ""),
     "",
-    "CyberConnect2",
+    "Valve",
   ),
   Game(
     "Mortal Kombat 11",
