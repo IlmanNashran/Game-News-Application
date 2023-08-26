@@ -35,7 +35,7 @@ List<Game> games = [
   Game(
     "Tom Clancy's The Division 2",
     GameImage(
-        "https://cdn.division.zone/uploads/2019/03/tc-the-division-2-preload-start-times-sizes-header.jpg",
+        "https://upload.wikimedia.org/wikipedia/en/a/af/The_Division_2_art.jpg",
         ""),
     "",
     "Massive Entertainment",
@@ -54,21 +54,23 @@ List<Game> games2 = [
   Game(
     "Grand Theft Auto V",
     GameImage(
-        "https://gpstatic.com/acache/26/25/1/uk/packshot-7136bdab871d6b2c8f07ccc9ad33b4d0.jpg",
+        "https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png",
         ""),
     "",
     "Rockstar Games",
   ),
   Game(
     "The Last of Us Part II",
-    GameImage("https://mvpo.us/img/P6253.jpg", ""),
+    GameImage(
+        "https://upload.wikimedia.org/wikipedia/en/4/4f/TLOU_P2_Box_Art_2.png",
+        ""),
     "",
     "Naughty Dog",
   ),
   Game(
     "Sekiro: Shadows Die Twice",
     GameImage(
-        "https://onlysp.escapistmagazine.com/wp-content/uploads/2019/03/Sekiro-Shadows-Die-Twice-logo-art.jpg",
+        "https://cdn.cloudflare.steamstatic.com/steam/apps/814380/header.jpg?t=1678991267",
         ""),
     "",
     "From Software",
@@ -76,7 +78,7 @@ List<Game> games2 = [
   Game(
     "Just Cause 4",
     GameImage(
-        "https://s3.gaming-cdn.com/images/products/2666/orig/just-cause-4-cover.jpg",
+        "https://upload.wikimedia.org/wikipedia/en/0/0f/Just_Cause_4_cover.jpg",
         ""),
     "",
     "Avalanche Studios",
